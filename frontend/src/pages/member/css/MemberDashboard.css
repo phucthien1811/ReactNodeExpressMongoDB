@@ -1,0 +1,567 @@
+/* Member Dashboard with md- prefix */
+.md-container {
+    padding: 20px;
+    background: rgb(244, 245, 247);
+    min-height: 100vh;
+}
+
+.md-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: rgb(107, 119, 140);
+    font-size: 16px;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- KHU VỰC CHÀO MỪNG --- */
+.md-header {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4CAF50;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.md-header-text {
+    flex: 1;
+}
+
+.md-header-text h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(33, 37, 41);
+    margin: 0 0 8px 0;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.md-header-text p {
+    font-size: 15px;
+    color: rgb(107, 119, 140);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* --- LƯỚI THÔNG TIN CHÍNH --- */
+.md-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* --- THẺ CHUNG --- */
+.md-card {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.md-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.md-card-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: rgb(33, 37, 41);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(244, 245, 247);
+}
+
+.md-card-header svg {
+    color: #4CAF50;
+}
+
+/* --- THẺ GÓI TẬP --- */
+.md-package-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.md-package-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(244, 245, 247);
+}
+
+.md-package-row:last-child {
+    border-bottom: none;
+}
+
+.md-package-label {
+    color: rgb(107, 119, 140);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.md-package-value {
+    color: rgb(33, 37, 41);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.md-package-name {
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.md-days-remaining {
+    background: linear-gradient(135deg, #FFC107, #FF9800);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.md-no-membership {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgb(107, 119, 140);
+}
+
+.md-no-membership p {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.md-btn-primary {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.md-btn-primary:hover {
+    background: #388E3C;
+    transform: translateY(-1px);
+}
+
+/* --- THẺ LỊCH TẬP --- */
+.md-schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.md-session-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgb(244, 245, 247);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.md-session-item:hover {
+    background: rgb(230, 235, 240);
+}
+
+.md-session-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.md-type-yoga { 
+    background: rgba(33, 150, 243, 0.15); 
+    color: #2196F3; 
+}
+
+.md-type-pt { 
+    background: rgba(255, 152, 0, 0.15); 
+    color: #FF9800; 
+}
+
+.md-session-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.md-session-name {
+    display: block;
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+    font-size: 14px;
+}
+
+.md-trainer-name {
+    font-size: 13px;
+    color: rgb(107, 119, 140);
+}
+
+.md-session-location {
+    font-size: 12px;
+    color: rgb(140, 150, 165);
+    font-style: italic;
+}
+
+.md-session-time {
+    font-weight: 700;
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+.md-no-schedule {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgb(107, 119, 140);
+}
+
+.md-no-schedule p {
+    margin-bottom: 20px;
+}
+
+.md-btn-secondary {
+    background: rgb(244, 245, 247);
+    color: rgb(107, 119, 140);
+    border: 1px solid rgb(214, 215, 217);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.md-btn-secondary:hover {
+    background: rgb(230, 235, 240);
+}
+
+/* --- THẺ MEMBERSHIP CARD --- */
+.md-membership-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.md-credit-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    aspect-ratio: 16/10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.md-credit-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.md-card-gym-name {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.md-card-chip {
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+.md-card-number {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.md-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.md-card-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.md-card-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+.md-card-name {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.md-card-logo {
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.md-checkin-section {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.md-checkin-section:hover {
+    background: rgb(244, 245, 247);
+    border-color: #4CAF50;
+}
+
+.md-checkin-label {
+    color: rgb(107, 119, 140);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.md-checkin-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.md-checkin-btn:hover {
+    background: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Modal QR Code */
+.md-qr-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.md-qr-modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    max-width: 420px;
+    width: 90%;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+.md-close-x-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgb(244, 245, 247);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgb(107, 119, 140);
+    font-size: 18px;
+}
+
+.md-close-x-btn:hover {
+    background: rgb(220, 53, 69);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.md-qr-modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.md-qr-icon {
+    font-size: 40px;
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 16px;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.md-qr-modal h3 {
+    color: rgb(33, 37, 41);
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.md-qr-description {
+    color: rgb(107, 119, 140);
+    margin: 0 0 24px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.md-qr-wrapper {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 24px;
+    border-radius: 16px;
+    margin: 24px 0;
+    display: inline-block;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.md-qr-info {
+    background: rgb(244, 245, 247);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+.md-qr-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(214, 215, 217);
+}
+
+.md-qr-info-row:last-child {
+    border-bottom: none;
+}
+
+.md-qr-label {
+    color: rgb(107, 119, 140);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.md-qr-value {
+    color: rgb(33, 37, 41);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .md-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .md-container {
+        padding: 15px;
+    }
+    
+    .md-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .md-header-text h1 {
+        font-size: 24px;
+    }
+}
+

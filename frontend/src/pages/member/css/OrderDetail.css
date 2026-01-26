@@ -1,0 +1,671 @@
+/* OrderDetail.css - Order Detail component with od- prefix */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.od-container {
+  min-height: 100vh;
+  background: rgb(244, 245, 247);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Header */
+.od-header {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.od-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 6px;
+  color: rgb(107, 119, 140);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.od-back-btn:hover {
+  background: rgb(244, 245, 247);
+  color: rgb(33, 37, 41);
+  border-color: rgb(107, 119, 140);
+}
+
+.od-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin: 0;
+}
+
+/* Status Card */
+.od-status-card {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.od-status-header {
+  margin-bottom: 24px;
+}
+
+.od-status-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.od-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  width: fit-content;
+}
+
+.od-status-badge svg {
+  font-size: 14px;
+}
+
+.od-status-pending {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 152, 0, 0.2) 100%);
+  color: #F57C00;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.od-status-confirmed {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.2) 0%, rgba(33, 150, 243, 0.15) 100%);
+  color: #1565C0;
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.od-status-processing {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.2) 0%, rgba(156, 39, 176, 0.15) 100%);
+  color: #6A1B9A;
+  border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+.od-status-shipped {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.2) 0%, rgba(255, 193, 7, 0.2) 100%);
+  color: #EF6C00;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.od-status-delivered {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2) 0%, rgba(139, 195, 74, 0.2) 100%);
+  color: #2E7D32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.od-status-cancelled {
+  background: linear-gradient(135deg, rgba(244, 67, 54, 0.2) 0%, rgba(244, 67, 54, 0.15) 100%);
+  color: #C62828;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.od-order-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+}
+
+.od-order-date svg {
+  font-size: 13px;
+}
+
+/* Timeline */
+.od-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.od-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: rgb(214, 215, 217);
+}
+
+.od-timeline-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.od-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.od-timeline-dot {
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid rgb(214, 215, 217);
+  transition: all 0.3s ease;
+}
+
+.od-timeline-item.od-completed .od-timeline-dot {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+}
+
+.od-timeline-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 4px;
+}
+
+.od-timeline-content p {
+  font-size: 13px;
+  color: rgb(107, 119, 140);
+  margin: 0;
+}
+
+/* Items Card */
+.od-items-card {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.od-items-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 20px;
+}
+
+.od-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.od-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: rgb(244, 245, 247);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.od-item:hover {
+  background: rgb(234, 235, 237);
+}
+
+.od-item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgb(214, 215, 217);
+  flex-shrink: 0;
+}
+
+.od-item-info {
+  flex: 1;
+}
+
+.od-item-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin: 0 0 8px 0;
+}
+
+.od-item-description {
+  font-size: 13px;
+  color: rgb(107, 119, 140);
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.od-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: rgb(107, 119, 140);
+}
+
+.od-item-meta strong {
+  color: rgb(33, 37, 41);
+  font-weight: 600;
+}
+
+.od-item-total {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+/* Info Grid */
+.od-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.od-info-card {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.od-info-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 16px;
+}
+
+.od-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.od-recipient-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin: 0;
+}
+
+.od-recipient-phone,
+.od-recipient-address {
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+  margin: 0;
+}
+
+.od-notes {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgb(214, 215, 217);
+}
+
+.od-notes strong {
+  display: block;
+  font-size: 13px;
+  color: rgb(33, 37, 41);
+  margin-bottom: 4px;
+}
+
+.od-notes p {
+  font-size: 13px;
+  color: rgb(107, 119, 140);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.od-payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+}
+
+.od-payment-row strong {
+  color: rgb(33, 37, 41);
+  font-weight: 600;
+}
+
+.od-payment-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.od-payment-pending {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 152, 0, 0.2) 100%);
+  color: #F57C00;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.od-payment-paid {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2) 0%, rgba(139, 195, 74, 0.2) 100%);
+  color: #2E7D32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.od-payment-failed {
+  background: linear-gradient(135deg, rgba(244, 67, 54, 0.2) 0%, rgba(244, 67, 54, 0.15) 100%);
+  color: #C62828;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.od-payment-refunded {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.2) 0%, rgba(156, 39, 176, 0.15) 100%);
+  color: #6A1B9A;
+  border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+/* Total Card */
+.od-total-card {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.od-total-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 16px;
+}
+
+.od-total-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.od-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+  padding: 8px 0;
+}
+
+.od-total-row.od-discount {
+  color: #f44336;
+}
+
+.od-total-row.od-final {
+  padding-top: 12px;
+  border-top: 2px solid rgb(214, 215, 217);
+  font-size: 20px;
+  color: rgb(33, 37, 41);
+}
+
+.od-total-row.od-final strong {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+/* Actions */
+.od-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.od-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.od-btn-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.od-btn-primary:hover {
+  background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+.od-btn-secondary {
+  background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+.od-btn-secondary:hover {
+  background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(33, 150, 243, 0.4);
+}
+
+.od-btn-danger {
+  background: linear-gradient(135deg, #f44336 0%, #EF5350 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(244, 67, 54, 0.2);
+}
+
+.od-btn-danger:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(244, 67, 54, 0.4);
+}
+
+.od-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Loading State */
+.od-loading {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.od-loading i {
+  font-size: 32px;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.od-loading p {
+  font-size: 16px;
+  color: rgb(107, 119, 140);
+}
+
+/* Error State */
+.od-error {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 12px;
+}
+
+.od-error-icon {
+  font-size: 64px;
+  color: #f44336;
+  margin-bottom: 20px;
+}
+
+.od-error h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 8px;
+}
+
+.od-error p {
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+  margin-bottom: 24px;
+}
+
+/* Not Found State */
+.od-not-found {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 12px;
+}
+
+.od-not-found-icon {
+  font-size: 64px;
+  color: rgb(214, 215, 217);
+  margin-bottom: 20px;
+}
+
+.od-not-found h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 8px;
+}
+
+.od-not-found p {
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+  margin-bottom: 24px;
+}
+
+/* Print Styles */
+@media print {
+  .od-header,
+  .od-actions,
+  .od-back-btn {
+    display: none;
+  }
+  
+  .od-container {
+    background: white;
+    padding: 0;
+  }
+  
+  .od-status-card,
+  .od-items-card,
+  .od-info-card,
+  .od-total-card {
+    border: 1px solid #000;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .od-container {
+    padding: 15px;
+  }
+  
+  .od-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .od-header h1 {
+    font-size: 20px;
+  }
+  
+  .od-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .od-item {
+    flex-direction: column;
+  }
+  
+  .od-item-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .od-item-total {
+    justify-content: flex-end;
+  }
+  
+  .od-actions {
+    flex-direction: column;
+  }
+  
+  .od-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .od-status-card,
+  .od-items-card,
+  .od-info-card,
+  .od-total-card {
+    padding: 16px;
+  }
+  
+  .od-timeline {
+    padding-left: 30px;
+  }
+  
+  .od-timeline-dot {
+    left: -26px;
+  }
+  
+  .od-total-row.od-final {
+    font-size: 16px;
+  }
+  
+  .od-total-row.od-final strong {
+    font-size: 20px;
+  }
+}

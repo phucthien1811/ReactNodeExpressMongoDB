@@ -1,0 +1,312 @@
+/* --- MEMBER SCHEDULE WITH ms- PREFIX --- */
+.ms-container {
+    padding: 20px;
+    background: rgb(244, 245, 247);
+    min-height: 100vh;
+}
+
+.ms-header {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ms-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(33, 37, 41);
+    margin: 0;
+}
+
+.ms-week-navigation {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgb(244, 245, 247);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(214, 215, 217);
+}
+
+.ms-week-display {
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+    min-width: 200px;
+    text-align: center;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid rgb(214, 215, 217);
+}
+
+.ms-week-navigation span {
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+    min-width: 200px;
+    text-align: center;
+}
+
+.ms-nav-btn {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    color: rgb(107, 119, 140);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ms-nav-btn:hover {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.ms-current-week-btn {
+    width: auto;
+    padding: 0 16px;
+    font-weight: 600;
+    font-size: 14px;
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.ms-current-week-btn:hover {
+    background: #45a049;
+    border-color: #45a049;
+}
+
+.ms-grid-container {
+    display: grid;
+    grid-template-columns: 120px repeat(7, 1fr); /* Cột tầng rộng hơn + 7 ngày */
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ms-grid-header,
+.ms-day-header {
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 600;
+    background: #4CAF50;
+    border-bottom: 1px solid rgb(214, 215, 217);
+    color: white;
+}
+
+.ms-day-header {
+    border-left: 1px solid rgb(214, 215, 217);
+}
+
+.ms-date-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+.ms-time-column {
+    grid-column: 1 / 2;
+    background: rgb(194, 204, 214);
+}
+
+.ms-time-slot-label {
+    height: 100px; /* Tăng chiều cao cho mỗi tầng */
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ms-main-grid {
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 100px); /* 4 tầng, mỗi tầng 100px */
+    position: relative;
+    gap: 0;
+    background: white;
+}
+
+/* Đường kẻ dọc và ngang giữa các ô */
+.ms-main-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            to right,
+            transparent,
+            transparent calc(100% / 7 - 1px),
+            rgb(214, 215, 217) calc(100% / 7 - 1px),
+            rgb(214, 215, 217) calc(100% / 7)
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 99px,
+            rgb(214, 215, 217) 99px,
+            rgb(214, 215, 217) 100px
+        );
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
+.ms-scheduled-item {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(67, 160, 71, 0.9));
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 4px;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.ms-scheduled-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    z-index: 10;
+}
+
+.ms-event-name {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ms-event-details {
+    font-size: 12px;
+    margin: 2px 0;
+    opacity: 0.95;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Color variations */
+.ms-event-green {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(67, 160, 71, 0.9));
+    border-color: #4CAF50;
+}
+
+.ms-event-orange {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.9), rgba(251, 140, 0, 0.9));
+    border-color: #FF9800;
+}
+
+.ms-event-red {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.9), rgba(229, 57, 53, 0.9));
+    border-color: #F44336;
+}
+
+.ms-event-blue {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.9), rgba(30, 136, 229, 0.9));
+    border-color: #2196F3;
+}
+
+.ms-event-purple {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.9), rgba(142, 36, 170, 0.9));
+    border-color: #9C27B0;
+}
+
+/* Loading và Empty States */
+.ms-loading,
+.ms-empty {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(107, 119, 140);
+    font-size: 16px;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .ms-grid-container {
+        grid-template-columns: 100px repeat(7, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ms-container {
+        padding: 15px;
+    }
+    
+    .ms-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .ms-grid-container {
+        grid-template-columns: 80px repeat(7, minmax(80px, 1fr));
+        overflow-x: auto;
+    }
+    
+    .ms-title {
+        font-size: 20px;
+    }
+}
+
+.event-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 4px 0;
+}
+.event-details {
+    font-size: 12px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Các màu cho sự kiện */
+.event-green {
+    background-color: rgba(224, 227, 224, 0.96);
+    border-color: #4CAF50;
+}
+.event-orange {
+    background-color: rgba(255, 152, 0, 0.2);
+    border-color: #FF9800;
+}
+.event-red {
+    background-color: rgba(244, 67, 54, 0.2);
+    border-color: #f44336;
+}

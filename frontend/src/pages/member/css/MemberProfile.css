@@ -1,0 +1,447 @@
+/* Member Profile Light Theme with mp- prefix */
+.mp-container {
+    background: rgb(244, 245, 247);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.mp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid rgb(214, 215, 217);
+}
+
+.mp-header h2 {
+    color: rgb(107, 119, 140);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.mp-edit-btn {
+    background: #43A047;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(67, 160, 71, 0.2);
+}
+
+.mp-edit-btn:hover {
+    background: #388E3C;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(67, 160, 71, 0.3);
+}
+
+.mp-content {
+    display: grid;
+    grid-template-columns: 300px 1fr 350px;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Column 1: Avatar and Personal Info */
+.mp-col-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mp-avatar-card {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mp-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #43A047;
+    margin-bottom: 15px;
+}
+
+.mp-avatar-name {
+    color: rgb(107, 119, 140);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.mp-personal-card {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mp-card-header {
+    background: #43A047;
+    color: white;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.mp-card-content {
+    padding: 20px;
+}
+
+.mp-info-row {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(214, 215, 217);
+}
+
+.mp-info-row:last-child {
+    border-bottom: none;
+}
+
+.mp-info-label {
+    color: rgb(107, 119, 140);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.mp-info-value {
+    color: rgb(33, 37, 41);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Column 2: Body Stats */
+.mp-col-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.mp-stats-card {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.mp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.mp-stat-item {
+    background: rgb(244, 245, 247);
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+.mp-stat-label {
+    display: block;
+    color: rgb(107, 119, 140);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.mp-stat-value {
+    display: block;
+    color: rgb(33, 37, 41);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.mp-stat-item.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Column 3: Membership Info */
+.mp-col-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.mp-membership-card {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.mp-membership-content {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.mp-package-name {
+    color: #43A047;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.mp-time-remaining {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgb(244, 245, 247);
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 6px;
+}
+
+.mp-time-label {
+    color: rgb(107, 119, 140);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.mp-time-value {
+    color: #43A047;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.mp-membership-dates {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(214, 215, 217);
+    color: rgb(107, 119, 140);
+    font-size: 13px;
+}
+
+/* Edit Mode Styles */
+.mp-avatar-upload-btn {
+    background: #43A047;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.mp-avatar-upload-btn:hover {
+    background: #388E3C;
+    transform: translateY(-1px);
+}
+
+.mp-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 4px;
+    font-size: 14px;
+    color: rgb(33, 37, 41);
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.mp-input:focus {
+    outline: none;
+    border-color: #43A047;
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
+}
+
+.mp-input-stat {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(33, 37, 41);
+    background: white;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.mp-input-stat:focus {
+    outline: none;
+    border-color: #43A047;
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
+}
+
+textarea.mp-input {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.mp-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    border-top: 1px solid rgb(214, 215, 217);
+}
+
+.mp-save-btn {
+    background: #43A047;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mp-save-btn:hover:not(:disabled) {
+    background: #388E3C;
+    transform: translateY(-1px);
+}
+
+.mp-save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mp-cancel-btn {
+    background: rgb(107, 119, 140);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mp-cancel-btn:hover {
+    background: rgb(90, 100, 120);
+    transform: translateY(-1px);
+}
+
+.mp-loading {
+    text-align: center;
+    padding: 50px;
+    color: rgb(107, 119, 140);
+    font-size: 18px;
+}
+
+.mp-error-message {
+    background: white;
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+}
+
+.mp-error-message h3 {
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+
+.mp-error-message p {
+    color: rgb(107, 119, 140);
+    margin-bottom: 20px;
+}
+
+.mp-retry-btn {
+    background: #43A047;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mp-retry-btn:hover {
+    background: #388E3C;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .mp-content {
+        grid-template-columns: 280px 1fr 320px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mp-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .mp-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mp-container {
+        padding: 10px;
+    }
+    
+    .mp-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .mp-content {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .mp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mp-avatar {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mp-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .mp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mp-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .mp-package-name {
+        font-size: 1.2rem;
+    }
+    
+    .mp-time-value {
+        font-size: 1.4rem;
+    }
+}

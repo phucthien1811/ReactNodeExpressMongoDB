@@ -1,0 +1,380 @@
+/* MemberBookClass.css - BookClass component with bc- prefix */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.bc-container {
+  min-height: 100vh;
+  background: rgb(244, 245, 247);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Header */
+.bc-header {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.bc-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin: 0;
+}
+
+/* Controls: Filter buttons and Search */
+.bc-controls {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.bc-filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.bc-filter-btn {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 6px;
+  color: rgb(107, 119, 140);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bc-filter-btn:hover {
+  background: rgb(244, 245, 247);
+  border-color: rgb(107, 119, 140);
+}
+
+.bc-filter-btn.bc-active {
+  background: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.bc-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  max-width: 400px;
+  background: rgb(244, 245, 247);
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.bc-search-icon {
+  color: rgb(107, 119, 140);
+  font-size: 14px;
+}
+
+.bc-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: rgb(33, 37, 41);
+  font-size: 14px;
+}
+
+.bc-search-input::placeholder {
+  color: rgb(107, 119, 140);
+}
+
+/* Table */
+.bc-table-wrapper {
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.bc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bc-table thead {
+  background: #4CAF50;
+}
+
+.bc-table th {
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border-bottom: 2px solid rgb(214, 215, 217);
+}
+
+.bc-table tbody tr {
+  border-bottom: 1px solid rgb(214, 215, 217);
+  transition: background 0.2s ease;
+}
+
+.bc-table tbody tr:hover {
+  background: rgb(244, 245, 247);
+}
+
+.bc-table tbody tr.bc-enrolled-row {
+  background: rgba(76, 175, 80, 0.08);
+  border-left: 3px solid #4CAF50;
+}
+
+.bc-table tbody tr.bc-enrolled-row:hover {
+  background: rgba(76, 175, 80, 0.12);
+}
+
+.bc-table td {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: rgb(33, 37, 41);
+}
+
+.bc-table td.bc-class-name {
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+}
+
+.bc-table td.bc-participants {
+  font-weight: 500;
+}
+
+.bc-count {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bc-count.bc-full {
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+/* Action Buttons */
+.bc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bc-enroll-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.bc-enroll-btn:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.bc-enroll-btn.bc-disabled {
+  background: rgb(214, 215, 217);
+  color: rgb(107, 119, 140);
+  cursor: not-allowed;
+}
+
+.bc-enroll-btn.bc-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.bc-unenroll-btn {
+  background: #f44336;
+  color: white;
+}
+
+.bc-unenroll-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+/* Loading State */
+.bc-loading {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.bc-loading i {
+  font-size: 32px;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.bc-loading p {
+  font-size: 16px;
+  color: rgb(107, 119, 140);
+}
+
+/* Empty State */
+.bc-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+}
+
+.bc-empty i {
+  font-size: 48px;
+  color: rgb(214, 215, 217);
+  margin-bottom: 15px;
+}
+
+.bc-empty h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  margin-bottom: 8px;
+}
+
+.bc-empty p {
+  font-size: 14px;
+  color: rgb(107, 119, 140);
+}
+
+/* Error State */
+.bc-error {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border: 1px solid rgb(214, 215, 217);
+  border-radius: 8px;
+}
+
+.bc-error i {
+  font-size: 48px;
+  color: #f44336;
+  margin-bottom: 15px;
+}
+
+.bc-error p {
+  font-size: 16px;
+  color: rgb(33, 37, 41);
+  margin-bottom: 20px;
+}
+
+.bc-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bc-retry-btn:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .bc-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .bc-search {
+    max-width: none;
+  }
+  
+  .bc-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .bc-table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bc-container {
+    padding: 15px;
+  }
+  
+  .bc-header h1 {
+    font-size: 20px;
+  }
+  
+  .bc-filter-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .bc-filter-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bc-header {
+    padding: 15px 20px;
+  }
+  
+  .bc-controls {
+    padding: 15px;
+  }
+  
+  .bc-filter-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .bc-table th,
+  .bc-table td {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+  
+  .bc-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

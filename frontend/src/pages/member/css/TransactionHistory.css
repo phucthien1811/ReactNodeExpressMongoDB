@@ -1,0 +1,202 @@
+.transactions-page-container {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #22c55e;
+    margin: 0;
+}
+.btn-export-excel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-export-excel:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.filters-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #6c757d;
+}
+.filter-chip {
+    background-color: #f8f9fa;
+    border: 2px solid #e5e5e5;
+    color: #495057;
+    padding: 8px 16px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+.filter-chip:hover {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
+}
+.filter-chip.active {
+    background-color: #22c55e;
+    color: #ffffff;
+    border-color: #22c55e;
+}
+.date-range-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c757d;
+}
+.date-range-picker input[type="date"] {
+    background-color: #ffffff;
+    border: 2px solid #e5e5e5;
+    color: #212529;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.btn-secondary {
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.table-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.transactions-table th, .transactions-table td {
+    padding: 16px 20px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid #f1f3f5;
+}
+.transactions-table thead {
+    background-color: #f8f9fa;
+}
+.transactions-table th {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+.transactions-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+.trx-id {
+    font-weight: 600;
+    color: #22c55e;
+    font-family: monospace;
+}
+.amount {
+    font-weight: 700;
+    font-size: 15px;
+}
+.amount.positive {
+    color: #22c55e;
+}
+.status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.status-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+.status-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+.status-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    color: #6c757d;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+}
+.pagination button {
+    background-color: #ffffff;
+    border: 2px solid #e5e5e5;
+    color: #495057;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.pagination button:hover:not(:disabled) {
+    background-color: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}
+.pagination button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.no-data-cell {
+    text-align: center !important;
+    color: #9ca3af;
+    padding: 60px 20px !important;
+    font-style: italic;
+}
