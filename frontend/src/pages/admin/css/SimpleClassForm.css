@@ -1,0 +1,333 @@
+/* Simple Class Form Modal Styles */
+.simple-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.simple-modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background:  #43a047;
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.simple-modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.simple-modal-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.simple-modal-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.simple-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 25px;
+  background: white;
+}
+
+/* Custom scrollbar */
+.simple-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.simple-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.simple-modal-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 10px;
+}
+
+.simple-modal-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.simple-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.simple-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-form-group label {
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.simple-form-group input,
+.simple-form-group select,
+.simple-form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgb(229, 231, 235);
+  border-radius: 8px;
+  background: white;
+  color: #1f2937;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.simple-form-group input:focus,
+.simple-form-group select:focus,
+.simple-form-group textarea:focus {
+  outline: none;
+  border-color: rgb(229, 231, 235);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  transform: translateY(-1px);
+}
+
+.simple-form-group input:hover,
+.simple-form-group select:hover,
+.simple-form-group textarea:hover {
+  border-color: #d1d5db;
+}
+
+.simple-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.simple-form-description {
+  grid-column: 1 / -1;
+}
+
+/* Recurring Section */
+.simple-form-recurring-section {
+  grid-column: 1 / -1;
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.simple-form-full-width {
+  grid-column: 1 / -1;
+}
+
+.simple-weekday-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.simple-weekday-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.simple-weekday-option:hover {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.simple-weekday-option input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.simple-weekday-option input[type="checkbox"]:checked + span {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.simple-weekday-option input[type="checkbox"]:checked {
+  accent-color: #22c55e;
+}
+
+.simple-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid rgb(229, 231, 235);
+}
+
+.simple-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.simple-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.simple-btn-secondary {
+  background: #f3f4f6;
+  color: #1f2937;
+  border: 2px solid rgb(229, 231, 235);
+}
+
+.simple-btn-secondary:hover:not(:disabled) {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.simple-btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.simple-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.simple-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Loading animation */
+.simple-btn .loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .simple-modal-overlay {
+    padding: 10px;
+  }
+  
+  .simple-modal-content {
+    max-width: 100%;
+    max-height: 95vh;
+  }
+  
+  .simple-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .simple-modal-header {
+    background: #43a047;
+    padding: 15px 20px;
+  }
+  
+  .simple-modal-body {
+    padding: 20px;
+  }
+  
+  .simple-form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .simple-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-modal-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .simple-form-group input,
+  .simple-form-group select,
+  .simple-form-group textarea {
+    padding: 10px 12px;
+  }
+}
+
+/* Form validation styles */
+.simple-form-group input:invalid {
+  border-color: rgb(229, 231, 235);
+}
+
+.simple-form-group input:valid {
+  border-color: rgb(229, 231, 235);
+}
+
+/* Enhanced focus styles */
+.simple-form-group input:focus:valid {
+  border-color: rgb(229, 231, 235);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.simple-form-group input:focus:invalid {
+  border-color: rgb(229, 231, 235);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}

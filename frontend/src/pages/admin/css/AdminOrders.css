@@ -1,0 +1,406 @@
+/* Admin Orders Layout */
+.ao-admin-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ao-admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ao-admin-page-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.ao-admin-page-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ao-search-bar {
+    position: relative;
+}
+
+.ao-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--admin-text-secondary);
+}
+
+.ao-search-bar input {
+    background-color: var(--admin-sidebar-bg);
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    color: var(--admin-text-primary);
+    padding: 10px 12px 10px 36px;
+    width: 280px;
+    transition: all 0.2s;
+}
+
+.ao-filter-group {
+    position: relative;
+}
+
+.ao-filter-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--admin-text-secondary);
+    pointer-events: none;
+}
+
+.ao-filter-group select {
+    background-color: var(--admin-sidebar-bg);
+    border: 1px solid rgb(214, 215, 217);
+    border-radius: 8px;
+    color: var(--admin-text-primary);
+    padding: 10px 12px 10px 36px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.ao-admin-table-container {
+    background-color: var(--admin-card-bg);
+    border-radius: 12px;
+    border: 1px solid rgb(214, 215, 217);
+    overflow: hidden;
+}
+
+.ao-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ao-admin-table th,
+.ao-admin-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgb(214, 215, 217);
+}
+
+.ao-admin-table thead {
+    background-color: rgb(235, 238, 243);
+}
+
+.ao-admin-table th {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+}
+
+.ao-order-id {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #e9ecef;
+    color: #495057;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+}
+
+.ao-total-amount {
+    font-weight: 500;
+}
+
+/* Kế thừa .status-pill từ Members.css nếu có */
+.ao-status-pill {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ao-status-processing {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.3) 100%);
+    color: #1d4ed8;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.ao-status-shipped {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.3) 100%);
+    color: #b45309;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.ao-status-delivered {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%);
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.ao-status-cancelled {
+    background: linear-gradient(135deg, rgba(107, 114, 128, 0.2) 0%, rgba(75, 85, 99, 0.3) 100%);
+    color: #374151;
+    border: 1px solid rgba(107, 114, 128, 0.4);
+}
+
+/* Action Buttons */
+.ao-action-buttons {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.ao-action-btn {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ao-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ao-action-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ao-view-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.ao-view-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.ao-confirm-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.ao-confirm-btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.ao-processing-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.ao-processing-btn:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.ao-ship-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+}
+
+.ao-ship-btn:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+}
+
+.ao-cancel-btn {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.ao-cancel-btn:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.ao-loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Modal Styles */
+.ao-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.ao-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.ao-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.ao-modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.ao-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ao-modal-body {
+    padding: 0;
+}
+
+.ao-order-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.ao-info-section h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.ao-info-section p {
+    margin: 8px 0;
+    color: #6b7280;
+}
+
+.ao-order-items-section h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.ao-items-list {
+    margin-bottom: 20px;
+}
+
+.ao-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.ao-item-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.ao-item-quantity {
+    margin: 0 15px;
+    color: #6b7280;
+}
+
+.ao-item-price {
+    font-weight: 500;
+    color: #059669;
+}
+
+.ao-order-total-section {
+    border-top: 2px solid #e5e7eb;
+    padding-top: 15px;
+}
+
+.ao-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ao-total-row.ao-final-total {
+    font-size: 18px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.ao-notes-section h4 {
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.ao-notes-section p {
+    color: #6b7280;
+    background-color: #f9fafb;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+/* Excel Export Button */
+.ao-btn-excel {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.ao-btn-excel:hover {
+    background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+.ao-btn-excel:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.ao-btn-excel svg {
+    font-size: 16px;
+}
