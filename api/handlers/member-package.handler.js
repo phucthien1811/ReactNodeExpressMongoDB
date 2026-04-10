@@ -1,4 +1,4 @@
-import memberPackageService from '../services/member-package.service.js';
+import memberPackageService from '../use-cases/member-package.use-case.js';
 import packageValidation from '../validations/package.js';
 
 export const memberPackageController = {

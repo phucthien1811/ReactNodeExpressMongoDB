@@ -1,4 +1,4 @@
-import { registerUser, loginUserWithEmailAndPassword, refreshAuthToken } from '../services/auth.service.js';
+import { registerUser, loginUserWithEmailAndPassword, refreshAuthToken } from '../use-cases/auth.use-case.js';
 import { loginSchema, registerSchema } from '../validations/auth.js';
 
 export const register = async (req, res) => {

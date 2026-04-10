@@ -1,5 +1,5 @@
 import express from 'express';
-import invoiceController from '../controllers/invoice.controller.js';
+import invoiceController from '../handlers/invoice.handler.js';
 import { auth } from '../middleware/auth.js';
 import { authorizeRoles } from '../middleware/role.js';
 

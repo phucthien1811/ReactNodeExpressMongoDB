@@ -61,12 +61,25 @@
   font-size: 20px;
   font-weight: 800;
   color: #fff;
+  display: inline-block;
+  animation: logoPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
 }
 
 .logo__accent {
   font-size: 20px;
   font-weight: 800;
   color: #34d399;
+  display: inline-block;
+  animation: logoPulse 1.2s ease-in-out infinite;
 }
 
 /* User Menu Styles */

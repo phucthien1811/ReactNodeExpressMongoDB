@@ -1,4 +1,4 @@
-import userService from '../services/user.js';
+import userService from '../use-cases/user.use-case.js';
 import { exportToExcel, presetStyles } from '../utils/excelExporter.js';
 import db from '../config/knex.js';
 import moment from 'moment';

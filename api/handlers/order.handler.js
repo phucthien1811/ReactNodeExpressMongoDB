@@ -1,4 +1,4 @@
-import orderService from '../services/order.service.js';
+import orderService from '../use-cases/order.use-case.js';
 import { successResponse, errorResponse } from '../utils/resonse.js';
 
 class OrderController {

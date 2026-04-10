@@ -1,4 +1,4 @@
-import invoiceService from '../services/invoice.service.js';
+import invoiceService from '../use-cases/invoice.use-case.js';
 import { successResponse, errorResponse } from '../utils/resonse.js';
 
 class InvoiceController {

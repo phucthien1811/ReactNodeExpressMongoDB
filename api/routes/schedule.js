@@ -19,7 +19,7 @@ import {
   exportEnrolledUsers,
   exportSchedules,
   duplicateSchedule
-} from "../controllers/schedule.controller.js";
+} from "../handlers/schedule.handler.js";
 
 const router = Router();
 

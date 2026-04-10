@@ -1,4 +1,4 @@
-import dashboardService from '../services/dashboard.service.js';
+import dashboardService from '../use-cases/dashboard.use-case.js';
 import { successResponse, errorResponse } from '../utils/resonse.js';
 
 class DashboardController {

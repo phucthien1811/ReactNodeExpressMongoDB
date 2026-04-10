@@ -1,4 +1,4 @@
-import { scheduleService } from "../services/schedule.service.js";
+import { scheduleService } from "../use-cases/schedule.use-case.js";
 import scheduleRepo from "../repositories/schedule.repo.js";
 import knex from '../config/knex.js';
 import { exportToExcel, presetStyles } from '../utils/excelExporter.js';

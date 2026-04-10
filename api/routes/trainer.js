@@ -1,5 +1,5 @@
 import express from 'express';
-import trainerController from '../controllers/trainer.js';
+import trainerController from '../handlers/trainer.handler.js';
 import { auth } from '../middleware/auth.js';
 import { authorizeRoles } from '../middleware/role.js';
 
