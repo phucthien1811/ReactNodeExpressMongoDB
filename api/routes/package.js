@@ -1,5 +1,5 @@
 import express from 'express';
-import packageController from '../controllers/package.controller.js';
+import packageController from '../handlers/package.handler.js';
 import { auth } from '../middleware/auth.js';
 import { authorizeRoles } from '../middleware/role.js';
 

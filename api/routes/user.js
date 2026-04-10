@@ -1,5 +1,5 @@
 import express from 'express';
-import userController from '../controllers/user.js';
+import userController from '../handlers/user.handler.js';
 import { auth } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/role.js';
 import { validate } from '../middleware/validate.js';

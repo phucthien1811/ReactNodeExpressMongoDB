@@ -7,7 +7,7 @@ This repository contains a simple gym management application with a Node.js/Expr
 - Backend: Node.js + Express
 - Database: MySQL (used via Knex.js and XAMPP)
 - ORM / Query builder: Knex
-- Authentication: JWT (backend services)
+- Authentication: JWT (backend use-cases)
 - Frontend: React 
 
 ## Project Structure 
@@ -22,17 +22,20 @@ This repository contains a simple gym management application with a Node.js/Expr
 │   │   ├── config.js
 │   │   ├── database.js
 │   │   └── knex.js
-│   ├── controllers/        # HTTP controllers/handlers
-│   │   ├── auth.js
-│   │   ├── member.js
-│   │   ├── member-profile.controller.js
-│   │   ├── member-package.controller.js
-│   │   ├── order.controller.js
-│   │   ├── package.controller.js
-│   │   ├── schedule.controller.js
-│   │   ├── schedule.js
-│   │   ├── trainer.js
-│   │   └── user.js
+│   ├── handlers/           # HTTP handlers
+│   │   ├── auth.handler.js
+│   │   ├── dashboard.handler.js
+│   │   ├── invoice.handler.js
+│   │   ├── member-package.handler.js
+│   │   ├── member-profile.handler.js
+│   │   ├── order.handler.js
+│   │   ├── package.handler.js
+│   │   ├── payment.handler.js
+│   │   ├── product.handler.js
+│   │   ├── schedule.handler.js
+│   │   ├── trainer.handler.js
+│   │   ├── user.handler.js
+│   │   └── voucher.handler.js
 │   ├── routes/             # route definitions
 │   │   ├── index.js
 │   │   ├── auth.js
@@ -45,15 +48,19 @@ This repository contains a simple gym management application with a Node.js/Expr
 │   │   ├── trainer.js
 │   │   ├── uploads.js
 │   │   └── user.js
-│   ├── services/           # business logic / service layer
-│   │   ├── member.js
-│   │   ├── user.js
-│   │   ├── trainer.js
-│   │   ├── member-profile.service.js
-│   │   ├── member-package.service.js
-│   │   ├── order.service.js
-│   │   ├── package.service.js
-│   │   └── schedule.service.js
+│   ├── use-cases/          # business logic layer
+│   │   ├── auth.use-case.js
+│   │   ├── dashboard.use-case.js
+│   │   ├── invoice.use-case.js
+│   │   ├── member-package.use-case.js
+│   │   ├── member-profile.use-case.js
+│   │   ├── order.use-case.js
+│   │   ├── package.use-case.js
+│   │   ├── product.use-case.js
+│   │   ├── schedule.use-case.js
+│   │   ├── trainer.use-case.js
+│   │   ├── user.use-case.js
+│   │   └── voucher.use-case.js
 │   ├── repositories/       # DB access layer
 │   ├── middleware/         # auth, validation, roles
 │   ├── validations/        # joi or custom validators

@@ -1,4 +1,4 @@
-import packageService from '../services/package.service.js';
+import packageService from '../use-cases/package.use-case.js';
 import packageValidation from '../validations/package.js';
 import { exportToExcel, presetStyles } from '../utils/excelExporter.js';
 

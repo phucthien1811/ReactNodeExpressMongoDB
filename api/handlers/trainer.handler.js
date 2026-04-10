@@ -1,4 +1,4 @@
-import trainerService from '../services/trainer.js';
+import trainerService from '../use-cases/trainer.use-case.js';
 
 class TrainerController {
   // GET /api/v1/trainers - Lấy danh sách trainers

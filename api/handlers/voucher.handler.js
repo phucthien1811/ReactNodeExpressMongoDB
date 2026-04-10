@@ -1,4 +1,4 @@
-import voucherService from '../services/voucher.service.js';
+import voucherService from '../use-cases/voucher.use-case.js';
 
 const voucherController = {
   // Tạo voucher mới (Admin only)

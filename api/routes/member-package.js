@@ -1,5 +1,5 @@
 import express from 'express';
-import memberPackageController from '../controllers/member-package.controller.js';
+import memberPackageController from '../handlers/member-package.handler.js';
 import { auth } from '../middleware/auth.js';
 import { authorizeRoles } from '../middleware/role.js';
 

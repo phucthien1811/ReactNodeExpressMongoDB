@@ -1,4 +1,4 @@
-import productService from '../services/product.service.js';
+import productService from '../use-cases/product.use-case.js';
 import { exportToExcel } from '../utils/excelExporter.js';
 
 class ProductController {

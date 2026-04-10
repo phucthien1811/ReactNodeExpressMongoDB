@@ -1,4 +1,4 @@
-import memberProfileService from '../services/member-profile.service.js';
+import memberProfileService from '../use-cases/member-profile.use-case.js';
 import { successResponse, errorResponse } from '../utils/resonse.js';
 
 class MemberProfileController {

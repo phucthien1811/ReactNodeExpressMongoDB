@@ -1,5 +1,5 @@
 import express from 'express';
-import voucherController from '../controllers/voucher.controller.js';
+import voucherController from '../handlers/voucher.handler.js';
 import { auth } from '../middleware/auth.js';
 import { authorizeRoles } from '../middleware/role.js';
 

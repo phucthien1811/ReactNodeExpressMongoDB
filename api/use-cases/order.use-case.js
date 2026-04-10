@@ -1,5 +1,5 @@
 import orderRepo from '../repositories/order.repo.js';
-import invoiceService from './invoice.service.js';
+import invoiceService from './invoice.use-case.js';
 import { exportToExcel } from '../utils/excelExporter.js';
 
 class OrderService {

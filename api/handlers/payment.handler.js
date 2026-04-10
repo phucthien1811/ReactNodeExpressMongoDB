@@ -1,11 +1,11 @@
-// File: api/controllers/payment.controller.js
+// File: api/handlers/payment.handler.js
 
 import VNPayHelper from '../utils/vnpay.helper.js';
 import vnpayConfig from '../config/vnpay.config.js';
 import moment from 'moment';
-import orderService from '../services/order.service.js';
-import { memberPackageService } from '../services/member-package.service.js';
-import invoiceService from '../services/invoice.service.js';
+import orderService from '../use-cases/order.use-case.js';
+import { memberPackageService } from '../use-cases/member-package.use-case.js';
+import invoiceService from '../use-cases/invoice.use-case.js';
 import db from '../config/knex.js';
 import { exportToExcel } from '../utils/excelExporter.js';
 
